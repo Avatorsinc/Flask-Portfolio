@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% block headersection %}
+<section class="header-container animate">
+    <img src="{{ url_for('static', filename='images/avatar.png') }}" alt="Image" class="profile-image">
+    <h1>Arkadiusz Sikora</h1>
+    <div class="content-text">
+        <h2>Dev + Support</h2>
+        <p>
+            Can communicate in JAVA, Kotlin, Powershell, MS Graph, Python, and Javascript.<br>
+            I create Web Applications, Android Apps, and some useful legacy/graph Powershell scripts.
+        </p>
+    </div>
+    <a href="#footer" class="btn btn-secondary">CLICK HERE?</a>
+</section>
+{% endblock %}
+
+{% block body %}
+<section id="projects" class="project-container container">
+    <div class="division"></div>
+    <div class="content-text">
+        <h2>Special Skills</h2>
+        <div class="container">
+            <table style="text-align: center;">
+                <tr>
+                    <td style="padding: 20px;">
+                        <div class="textcard animate-skill" style="padding: 20px;">
+                            <h2><i class="fab fa-android"></i></h2>
+                            <h4>Mobile Development</h4>
+                            <p>Android application development, UI/UX design, API integration.</p>
+                        </div>
+                    </td>
+                    <td style="padding: 20px;">
+                        <div class="textcard animate-skill" style="padding: 20px;">
+                            <h2><i class="fab fa-html5"></i></h2>
+                            <h4>Web Development</h4>
+                            <p>Python web frameworks, API development, database management.</p>
+                        </div>
+                    </td>
+                    <td style="padding: 20px;">
+                        <div class="textcard animate-skill" style="padding: 20px;">
+                            <h2><i class="fab fa-terminal"></i></h2>
+                            <h4>Scripting and Automation</h4>
+                            <p>PowerShell, MS Graph scripting, JWT tokens.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px;">
+                        <div class="textcard animate-skill" style="padding: 20px;">
+                            <h2><i class="fab fa-laptop"></i></h2>
+                            <h4>Device and Endpoint Management</h4>
+                            <p>MDM (SOTI), on-prem PC management (2Pint PXE SCCM), Azure PC management, Elo, Scout.</p>
+                        </div>
+                    </td>
+                    <td style="padding: 20px;">
+                        <div class="textcard animate-skill" style="padding: 20px;">
+                            <h2><i class="fab fa-server"></i></h2>
+                            <h4>Server and OS Management</h4>
+                            <p>Windows Server, Linux administration.</p>
+                        </div>
+                    </td>
+                    <td style="padding: 20px;">
+                        <div class="textcard animate-skill" style="padding: 20px;">
+                            <h2><i class="fab fa-envelope"></i></h2>
+                            <h4>Email and Collaboration Tools</h4>
+                            <p>Microsoft Exchange, Office 365 applications.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px;">
+                        <div class="textcard animate-skill" style="padding: 20px;">
+                            <h2><i class="fab fa-google"></i></h2>
+                            <h4>Google Cloud Platform (GCP)</h4>
+                            <p>Google Console management & development, IAM, API management, authentication, app deployment, VM management.</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="project-container container animate">
+    <div class="division"></div>
+    <div class="content-text">
+        <h2>My Recent Project</h2>
+        <p>You can check more in the projects section</p>
+    </div>
+    <div class="container">
+        <div class="textcard">
+            <table>
+                <tr>
+                    <td>
+                        <img src="{{ url_for('static', filename='images/sdportal.png') }}" alt="ShiftScheduler logo" style="width: auto; max-width: 100%;">
+                    </td>
+                    <td>
+                        <div class="container">
+                            <h3>ShiftScheduler</h3>
+                            <p style="text-align: justify;">
+                                ShiftScheduler is a robust web application built using the Flask framework, designed to solve complex scheduling problems for businesses operating 24/7. This solution caters to organizations with 10 or more employees, managing diverse roles and responsibilities across five distinct shifts throughout the day. Here are the key features and capabilities of ShiftScheduler:
+                            </p>
+                            <ul style="text-align: justify;">
+                                <li><b>Advanced Scheduling Algorithm:</b> The schedule generator accurately allocates shifts to employees, achieving up to 60% accuracy. The system learns from past schedules to continuously improve its performance.</li>
+                                <li><b>Compliance with Polish Labor Law:</b> ShiftScheduler ensures all schedules adhere to Polish labor regulations, providing peace of mind for employers and employees alike.</li>
+                                <li><b>Employee Preferences and Holidays:</b> The application respects individual employee preferences and holiday schedules, balancing company needs with personal time off.</li>
+                                <li><b>Google Integration:</b> By integrating with Google or-tools, ShiftScheduler offers seamless synchronization and management of schedules, making it easy for employees to stay updated.</li>
+                                <li><b>Full Employee Management:</b> Beyond scheduling, ShiftScheduler is evolving into a complete employee management system. Current features include handling various administrative tasks, and continuous efforts are made to fix bugs and add new improvements, aiming to provide a comprehensive solution.</li>
+                                <li><b>User-Friendly Interface:</b> Designed with usability in mind, the application provides an intuitive interface for both managers and employees, ensuring smooth interaction and easy navigation.</li>
+                            </ul>
+                            <p style="text-align: justify;">
+                                ShiftScheduler is more than just a schedule generator; it is a full-fledged employee management application, continuously developing to meet the growing needs of modern businesses. Join the journey to revolutionize employee management and scheduling with ShiftScheduler.
+                            </p>
+                            <a href="https://sdportal.pl" class="btn btn-secondary">View Project <i class="fab fa-github"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <a href="{{url_for('projects_page')}}" class="btn btn-secondary">See More <i class="fas fa-arrow-right"></i></a>
+</section>
+{% endblock %}
+
+<style>
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .textcard p {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .textcard ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .animate {
+        opacity: 0;
+        transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+        .animate.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate.scroll {
+            transform: translateY(20px);
+        }
+
+    .animate-skill {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    }
+
+        .animate-skill.show {
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+        }
+
+        .animate-skill.scroll {
+            transform: scale(1) rotate(360deg);
+        }
+</style>
