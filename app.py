@@ -1,9 +1,7 @@
 from datetime import datetime
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate, migrate
-
-
+from flask_migrate import Migrate
 import requests
 import re
 
@@ -14,7 +12,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 # sqlite3 database
 db = SQLAlchemy(app)
 
-# db migration conf
+# db migration configuration
 migrate = Migrate(app, db)
 
 # Models
@@ -26,7 +24,7 @@ class Contact(db.Model):
     reason = db.Column(db.String(200), unique=True, nullable=False)
     date = db.Column(db.String(12), unique=False, nullable=True)
 
-    def __init__(self, name:str, phone:str, email:str, reason:str) -> None:
+    def __init__(self, name: str, phone: str, email: str, reason: str) -> None:
         self.name = name
         self.phone = phone
         self.email = email
@@ -38,7 +36,8 @@ class Contact(db.Model):
 
 
 def get_projects():
-    api_url = f'https://api.github.com/users/avatorsinc/repos'
+    # Replace YOUR_GITHUB_USERNAME with your own GitHub username or update the API URL as needed
+    api_url = f'https://api.github.com/users/YOUR_GITHUB_USERNAME/repos'
     cards_list = requests.get(api_url).json()
     return cards_list
 
@@ -55,7 +54,8 @@ def err_404(message):
 
 @app.route('/')
 def main_page():
-    return render_template('index.html', title='Avatorsinc - Homepage')
+    # Update the title as needed
+    return render_template('index.html', title='Your Homepage Title')
 
 
 @app.route('/home')
@@ -73,7 +73,7 @@ def contact_page():
         phone = request.form.get('phone', '').strip()
         reason = request.form.get('reason', '').strip()
 
-        # check phone number
+        # Validate phone number format
         contact_info_included = False
         if 10 <= len(phone) <= 13 and re.fullmatch(r'^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$', phone):
             entry = Contact(name, phone, email, reason)
@@ -87,3 +87,7 @@ def contact_page():
 @app.route('/projects')
 def projects_page():
     return render_template('projects.html', title="Projects", cards=get_projects())
+
+
+if __name__ == '__main__':
+    app.run(debug=True)

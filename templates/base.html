@@ -36,9 +36,9 @@
                 <ul class="nav-menu">
                     <li><a class="nav-link" href="{{ url_for('projects_page') }}">PROJECTS</a></li>
                     <li><a class="nav-link" href="{{ url_for('contact_page') }}">CONTACT</a></li>
-                    <!-- <li><a class="nav-link" href="#">BlOG</a></li> -->
+                    <!-- <li><a class="nav-link" href="#">BLOG</a></li> -->
                     <li>
-                        <a class="btn btn-primary" href="https://github.com/Avatorsinc">
+                        <a class="btn btn-primary" href="#PLACE_YOUR_GITHUB_OR_RESUME_LINK">
                             RESUME <i class="fas fa-arrow-right"></i>
                         </a>
                     </li>
@@ -72,20 +72,20 @@
 
     <footer id="footer" class="animate">
         <div class="container">
-            <a href="mailto:arkadiusz.sikora@avatorsinc.pl">arkadiusz.sikora@avatorsinc.pl</a>
+            <a href="mailto:#PLACE_YOUR_EMAIL_HERE">#PLACE_YOUR_EMAIL_HERE</a>
             <!-- Social links -->
             <div class="social">
-                <a href="https://www.linkedin.com/in/arek-sikora-054132255/">
+                <a href="#PLACE_YOUR_LINKEDIN_PROFILE">
                     <img src="{{ url_for('static', filename='assets/linkedin-icon.svg') }}" alt="Linkedin"
                          style="border-radius: 0px;">
                 </a>
-                <a href="https://github.com/Avatorsinc">
+                <a href="#PLACE_YOUR_GITHUB_PROFILE">
                     <img src="{{ url_for('static', filename='assets/github-icon.svg') }}" alt="GitHub"
                          style="border-radius: 0px;">
                 </a>
             </div>
             <!-- Attribution -->
-            <p>Copyright &copy; Avatorsinc 2024, All rights reserved</p>
+            <p>Copyright &copy; Your Company 2024, All rights reserved</p>
         </div>
     </footer>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
